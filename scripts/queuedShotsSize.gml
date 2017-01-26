@@ -1,0 +1,1 @@
+return nInd + 1;
