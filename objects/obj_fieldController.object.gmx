@@ -26,6 +26,9 @@
           <argument>
             <kind>1</kind>
             <string>distance += 1;
+if (FIELD_TIME - current_time + startTime &lt; 0) {
+    room_goto(2);
+}
 </string>
           </argument>
         </arguments>
@@ -49,7 +52,14 @@
           <argument>
             <kind>1</kind>
             <string>globalvar distance;
-distance = 0;
+distance = 5000;
+startTime = current_time;
+
+pg_deck_init();
+
+with(obj_laserCannon) {
+  reloading = false;
+}
 </string>
           </argument>
         </arguments>
@@ -73,8 +83,14 @@ distance = 0;
           <argument>
             <kind>1</kind>
             <string>draw_set_font(fnt_ammo);
-draw_text(800, 670, "AMMO: " + string(queuedShotsSize()) + " / " + string(invSize()));
+draw_text(800, 670, " AMMO: " + string(pg_clip_size()) + " / " + string(pg_deck_size()));
 draw_text(800, 100, "ENERGY: " + string(floor(obj_laserCannon.energy)) + " / 100");
+
+draw_set_font(fnt_countDown);
+var timeLeft = (FIELD_TIME - current_time + startTime)/1000;
+if (timeLeft &lt; 0) { timeLeft = 0 };
+draw_set_alpha(0.9);
+draw_text(400, 20, string_replace(string_replace(string_format(timeLeft, 3, 2),' ','0'),'.',':'));
 
 draw_set_font(fnt_instructions);
 draw_text_colour(200, 200, "WASD To Move.#Aim With Mouse.#Press Space Or Click To Shoot.#R to reload.#Collect Drops For New Ammo Types.#Esc to quit.", c_black, c_black, c_black, c_black, 0.7);

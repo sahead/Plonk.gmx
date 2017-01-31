@@ -6,90 +6,142 @@
   <NewExtensions/>
   <sounds name="sound"/>
   <sprites name="sprites">
-    <sprite>sprites\spr_plonkShip</sprite>
-    <sprites name="inventory">
-      <sprite>sprites\spr_reloading</sprite>
-      <sprite>sprites\spr_nextWeapon</sprite>
+    <sprites name="DropMenu">
+      <sprite>sprites\spr_dropMenuLogo</sprite>
     </sprites>
-    <sprites name="enemies">
-      <sprite>sprites\spr_blCroco</sprite>
-      <sprite>sprites\spr_rdCroco</sprite>
-      <sprite>sprites\spr_grCroco</sprite>
+    <sprites name="MainMenu">
+      <sprite>sprites\spr_mainMenuLogo</sprite>
     </sprites>
-    <sprites name="cannons">
-      <sprite>sprites\spr_grenadeCannon</sprite>
-      <sprite>sprites\spr_beamCannon</sprite>
-      <sprite>sprites\spr_spreadCannon</sprite>
-      <sprite>sprites\spr_LaserCannon</sprite>
-      <sprite>sprites\spr_turret</sprite>
+    <sprites name="PlayField">
+      <sprites name="Projectiles">
+        <sprite>sprites\spr_grenadeShot</sprite>
+        <sprite>sprites\spr_grenadeExplosion</sprite>
+        <sprite>sprites\spr_laserShot</sprite>
+      </sprites>
+      <sprites name="Turrets">
+        <sprite>sprites\spr_grenadeCannon</sprite>
+        <sprite>sprites\spr_beamCannon</sprite>
+        <sprite>sprites\spr_spreadCannon</sprite>
+        <sprite>sprites\spr_LaserCannon</sprite>
+        <sprite>sprites\spr_turret</sprite>
+      </sprites>
+      <sprites name="Enemies">
+        <sprite>sprites\spr_blCroco</sprite>
+        <sprite>sprites\spr_rdCroco</sprite>
+        <sprite>sprites\spr_grCroco</sprite>
+      </sprites>
+      <sprites name="Drops">
+        <sprite>sprites\spr_common</sprite>
+        <sprite>sprites\spr_uncommon</sprite>
+        <sprite>sprites\spr_rare</sprite>
+      </sprites>
+      <sprites name="UI">
+        <sprite>sprites\spr_nextWeapon</sprite>
+        <sprite>sprites\spr_reloading</sprite>
+      </sprites>
+      <sprite>sprites\spr_plonkShip</sprite>
     </sprites>
-    <sprites name="projectiles">
-      <sprite>sprites\spr_grenadeShot</sprite>
-      <sprite>sprites\spr_grenadeExplosion</sprite>
-      <sprite>sprites\spr_laserShot</sprite>
+    <sprites name="CommonUIElements">
+      <sprite>sprites\spr_okButton</sprite>
+      <sprite>sprites\spr_startGame</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
   <scripts name="scripts">
-    <scripts name="shooterInventoryAndQueue">
-      <script>scripts\shuffleShooterQueue.gml</script>
-      <script>scripts\pullShooter.gml</script>
-      <script>scripts\addToInventory.gml</script>
-      <script>scripts\initializeShooterInventoryAndQueue.gml</script>
-      <script>scripts\peekShooter.gml</script>
-      <script>scripts\invSize.gml</script>
-      <script>scripts\queuedShotsSize.gml</script>
+    <scripts name="debug">
+      <script>scripts\debugMsg.gml</script>
     </scripts>
-    <script>scripts\randomOffScreenLocation.gml</script>
-    <script>scripts\dropPickup.gml</script>
-    <scripts name="turretFiring">
-      <script>scripts\fireShooter.gml</script>
+    <scripts name="extlib">
+      <script>scripts\graduallyTurn.gml</script>
     </scripts>
+    <scripts name="PlayField">
+      <script>scripts\dropPickup.gml</script>
+      <script>scripts\randomOffScreenLocation.gml</script>
+      <scripts name="Clip and Deck">
+        <script>scripts\pg_clip_reload.gml</script>
+        <script>scripts\pg_clip_pop.gml</script>
+        <script>scripts\pg_deck_add.gml</script>
+        <script>scripts\pg_deck_init.gml</script>
+        <script>scripts\pg_clip_peek.gml</script>
+        <script>scripts\pg_deck_size.gml</script>
+        <script>scripts\pg_clip_size.gml</script>
+        <script>scripts\pg_deck_stringToShooter.gml</script>
+      </scripts>
+      <scripts name="Turret">
+        <script>scripts\fireShooter.gml</script>
+      </scripts>
+    </scripts>
+    <script>scripts\pg_inv_stringToSprite.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_instructions</font>
     <font>fonts\fnt_ammo</font>
+    <font>fonts\fnt_countDown</font>
+    <font>fonts\fnt_debug</font>
   </fonts>
   <objects name="objects">
-    <object>objects\obj_playerController</object>
-    <object>objects\obj_fieldController</object>
-    <objects name="enemy">
-      <object>objects\obj_grCroco</object>
-      <object>objects\obj_blCroco</object>
-      <object>objects\obj_rdCroco</object>
-      <object>objects\obj_crocoCreator</object>
-      <object>objects\obj_enemy</object>
+    <objects name="PlayField">
+      <objects name="projectiles">
+        <object>objects\obj_laserShot</object>
+        <object>objects\obj_beam</object>
+        <object>objects\obj_grenadeExplosion</object>
+        <object>objects\obj_grenade</object>
+      </objects>
+      <objects name="hud">
+        <object>objects\obj_reloadingSpinner</object>
+        <object>objects\obj_curWeaponIndicator</object>
+      </objects>
+      <objects name="Shooters">
+        <object>objects\obj_laserShooter</object>
+        <object>objects\obj_spreadShooter</object>
+        <object>objects\obj_grenadeShooter</object>
+        <object>objects\obj_beamShooter</object>
+      </objects>
+      <objects name="player">
+        <object>objects\obj_laserCannon</object>
+        <object>objects\obj_plonkShip</object>
+      </objects>
+      <objects name="pickups">
+        <object>objects\obj_pickupCommon</object>
+        <object>objects\obj_pickupRare</object>
+        <object>objects\obj_pickupUncommon</object>
+      </objects>
+      <objects name="enemy">
+        <object>objects\obj_grCroco</object>
+        <object>objects\obj_blCroco</object>
+        <object>objects\obj_rdCroco</object>
+        <object>objects\obj_crocoCreator</object>
+        <object>objects\obj_enemy</object>
+      </objects>
+      <object>objects\obj_fieldController</object>
     </objects>
-    <objects name="player">
-      <object>objects\obj_laserCannon</object>
-      <object>objects\obj_plonkShip</object>
+    <objects name="DropMenu">
+      <object>objects\obj_okButton</object>
+      <object>objects\obj_dropMenuController</object>
+      <object>objects\obj_dropMenuLogo</object>
     </objects>
-    <objects name="pickups">
-      <object>objects\obj_spreadPickup</object>
-      <object>objects\obj_grenadePickup</object>
-      <object>objects\obj_beamPickup</object>
+    <objects name="MainMenu">
+      <object>objects\obj_startGameButton</object>
+      <object>objects\obj_mainMenuLogo</object>
     </objects>
-    <objects name="Shooters">
-      <object>objects\obj_laserShooter</object>
-      <object>objects\obj_spreadShooter</object>
-      <object>objects\obj_grenadeShooter</object>
-      <object>objects\obj_beamShooter</object>
+    <objects name="ReferenceObjects">
+      <object>objects\obj_gameReference</object>
+      <object>objects\obj_appReference</object>
+      <object>objects\obj_debugController</object>
     </objects>
-    <objects name="hud">
-      <object>objects\obj_reloadingSpinner</object>
-      <object>objects\obj_curWeaponIndicator</object>
-    </objects>
-    <objects name="projectiles">
-      <object>objects\obj_laserShot</object>
-      <object>objects\obj_beam</object>
-      <object>objects\obj_grenadeExplosion</object>
-      <object>objects\obj_grenade</object>
+    <objects name="CommonUI">
+      <object>objects\obj_button</object>
     </objects>
   </objects>
   <rooms name="rooms">
-    <room>rooms\theField</room>
+    <room>rooms\MainMenu</room>
+    <room>rooms\PlayField</room>
+    <room>rooms\DropMenu</room>
   </rooms>
+  <constants number="1">
+    <constant name="FIELD_TIME">10000</constant>
+  </constants>
   <help>
     <rtf>help.rtf</rtf>
   </help>

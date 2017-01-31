@@ -29,7 +29,7 @@
           </argument>
           <argument>
             <kind>0</kind>
-            <string>50</string>
+            <string>90</string>
           </argument>
         </arguments>
       </action>
@@ -78,10 +78,8 @@
             <string>var shot = instance_create(x,y,obj_beam);
 shot.image_angle = image_angle + 90;
 shot.direction = image_angle + 90;
-var lc = instance_find(obj_laserCannon, 0);
-shot.x = lc.x - lengthdir_x(500, lc.image_angle - 90);
-shot.y = lc.y - lengthdir_y(500, lc.image_angle - 90);
-lc.doRotate = false;
+shot.x = x - lengthdir_x(500, image_angle - 90);
+shot.y = y - lengthdir_y(500, image_angle - 90);
 </string>
           </argument>
         </arguments>

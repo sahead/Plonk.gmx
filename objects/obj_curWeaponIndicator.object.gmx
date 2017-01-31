@@ -51,10 +51,10 @@ image_index = 2;
           <argument>
             <kind>1</kind>
             <string>var animFrame = -1;
-var nShooter = peekShooter(qOffset);
-var oid = nShooter.object_index;
+var nShooter = pg_clip_peek(qOffset);
 
 if (!is_undefined(nShooter)) {
+    var oid = nShooter.object_index;
     var name = object_get_name(oid);
     switch (name) {
         case "obj_laserShooter":

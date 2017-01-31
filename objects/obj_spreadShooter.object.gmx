@@ -29,7 +29,7 @@
           </argument>
           <argument>
             <kind>0</kind>
-            <string>5</string>
+            <string>35</string>
           </argument>
         </arguments>
       </action>
@@ -54,6 +54,64 @@
           <argument>
             <kind>0</kind>
             <string>30</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="2">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>obj_laserCannon</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>for (var i = 0; i &lt; 4; i++) {
+    var shot = instance_create(x,y,obj_laserShot);
+    shot.image_angle = image_angle + 70 + i * 13.3;
+    shot.direction = image_angle + 70 + i * 13.3;
+    shot.x += lengthdir_x(40,shot.direction);
+    shot.y += lengthdir_y(40,shot.direction);
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>obj_laserCannon</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>for (var i = 0; i &lt; 3; i++) {
+    var shot = instance_create(x,y,obj_laserShot);
+    shot.image_angle = image_angle + 70 + i * 15;
+    shot.direction = image_angle + 70 + i * 15;
+    shot.x += lengthdir_x(40,shot.direction);
+    shot.y += lengthdir_y(40,shot.direction);
+}
+</string>
           </argument>
         </arguments>
       </action>
@@ -83,6 +141,54 @@
     shot.y += lengthdir_y(40,shot.direction);
 }
 </string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>301</id>
+        <kind>0</kind>
+        <userelative>-1</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_set_alarm</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>0</kind>
+            <string>16</string>
+          </argument>
+          <argument>
+            <kind>4</kind>
+            <string>1</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>301</id>
+        <kind>0</kind>
+        <userelative>-1</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_set_alarm</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>0</kind>
+            <string>31</string>
+          </argument>
+          <argument>
+            <kind>4</kind>
+            <string>2</string>
           </argument>
         </arguments>
       </action>

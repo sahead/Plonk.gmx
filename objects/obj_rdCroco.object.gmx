@@ -76,14 +76,6 @@ direction = pd;
           <argument>
             <kind>1</kind>
             <string>if (bHealth &lt; 1) {
-    if (random(100) &lt; 40) {
-      // Drop Pickup
-      if (random(100) &gt; 60) {
-        instance_create(x, y, obj_spreadPickup);
-      } else {
-        instance_create(x, y, obj_grenadePickup);
-      }
-    }
     instance_destroy();
 }
 </string>

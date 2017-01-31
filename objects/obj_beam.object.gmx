@@ -29,7 +29,7 @@
           </argument>
           <argument>
             <kind>0</kind>
-            <string>150</string>
+            <string>250</string>
           </argument>
         </arguments>
       </action>
@@ -74,6 +74,9 @@
           <argument>
             <kind>1</kind>
             <string>image_alpha = 0.7
+
+var lc = instance_find(obj_laserCannon, 0);
+lc.rotSpeed = 4;
 </string>
           </argument>
         </arguments>
@@ -94,7 +97,7 @@
         <arguments>
           <argument>
             <kind>0</kind>
-            <string>50</string>
+            <string>90</string>
           </argument>
           <argument>
             <kind>4</kind>
@@ -121,7 +124,7 @@
           <argument>
             <kind>1</kind>
             <string>var lc = instance_find(obj_laserCannon, 0);
-lc.doRotate = true;
+lc.rotSpeed = lc.defRotSpeed;
 </string>
           </argument>
         </arguments>
@@ -159,8 +162,10 @@ lc.doRotate = true;
           <argument>
             <kind>1</kind>
             <string>var lc = instance_find(obj_laserCannon, 0);
-x = lc.x - lengthdir_x(480, lc.image_angle - 90);
-y = lc.y - lengthdir_y(480, lc.image_angle - 90);
+x = lc.x - lengthdir_x(780, lc.image_angle - 90);
+y = lc.y - lengthdir_y(780, lc.image_angle - 90);
+image_angle = lc.image_angle + 90;
+direction = lc.image_angle + 90;
 </string>
           </argument>
         </arguments>
@@ -183,7 +188,7 @@ y = lc.y - lengthdir_y(480, lc.image_angle - 90);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (distance % 3 == 0) {
+            <string>if (distance % 2 == 0) {
   other.bHealth -= 50;
 }
 </string>
