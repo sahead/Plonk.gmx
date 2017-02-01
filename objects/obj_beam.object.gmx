@@ -76,7 +76,7 @@
             <string>image_alpha = 0.7
 
 var lc = instance_find(obj_laserCannon, 0);
-lc.rotSpeed = 4;
+lc.rotSpeed = 6;
 </string>
           </argument>
         </arguments>

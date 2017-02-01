@@ -7,4 +7,6 @@ switch (argument0) {
         return instance_create(0, 0, obj_grenadeShooter);
     case "beam":
         return instance_create(0, 0, obj_beamShooter);
+    case "missile":
+        return instance_create(0, 0, obj_missileShooter);
 }

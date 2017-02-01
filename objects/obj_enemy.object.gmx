@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (random(100) &lt; 40) {
+            <string>if (random(100) &lt; 20) {
   dropPickup(x, y);
 }
 </string>
@@ -58,6 +58,10 @@
 
 if (abs(x) &gt; 3000 || abs(y) &gt; 3000) {
   instance_destroy();
+}
+
+if (bHealth &lt; 1) {
+    instance_destroy();
 }
 </string>
           </argument>

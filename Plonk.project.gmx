@@ -15,11 +15,13 @@
     <sprites name="PlayField">
       <sprites name="Projectiles">
         <sprite>sprites\spr_grenadeShot</sprite>
+        <sprite>sprites\spr_missile</sprite>
         <sprite>sprites\spr_grenadeExplosion</sprite>
         <sprite>sprites\spr_laserShot</sprite>
       </sprites>
       <sprites name="Turrets">
         <sprite>sprites\spr_grenadeCannon</sprite>
+        <sprite>sprites\spr_missileCannon</sprite>
         <sprite>sprites\spr_beamCannon</sprite>
         <sprite>sprites\spr_spreadCannon</sprite>
         <sprite>sprites\spr_LaserCannon</sprite>
@@ -27,6 +29,7 @@
       </sprites>
       <sprites name="Enemies">
         <sprite>sprites\spr_blCroco</sprite>
+        <sprite>sprites\spr_ylCroco</sprite>
         <sprite>sprites\spr_rdCroco</sprite>
         <sprite>sprites\spr_grCroco</sprite>
       </sprites>
@@ -43,11 +46,23 @@
     </sprites>
     <sprites name="CommonUIElements">
       <sprite>sprites\spr_okButton</sprite>
+      <sprite>sprites\spr_addButton</sprite>
       <sprite>sprites\spr_startGame</sprite>
     </sprites>
+    <sprite>sprites\spr_bgTile</sprite>
+    <sprites name="DeckCreationMenu">
+      <sprite>sprites\spr_DeckCreationUI</sprite>
+      <sprite>sprites\spr_leftSelectButton</sprite>
+      <sprite>sprites\spr_rightSelectbutton</sprite>
+      <sprite>sprites\spr_invSelectIcon</sprite>
+    </sprites>
   </sprites>
-  <backgrounds name="background"/>
-  <paths name="paths"/>
+  <backgrounds name="background">
+    <background>background\background0</background>
+  </backgrounds>
+  <paths name="paths">
+    <path>paths\testEnemyPath</path>
+  </paths>
   <scripts name="scripts">
     <scripts name="debug">
       <script>scripts\debugMsg.gml</script>
@@ -67,12 +82,18 @@
         <script>scripts\pg_deck_size.gml</script>
         <script>scripts\pg_clip_size.gml</script>
         <script>scripts\pg_deck_stringToShooter.gml</script>
+        <script>scripts\pg_inv_stringToSprite.gml</script>
+        <script>scripts\pg_inv_shooterToIndex.gml</script>
+        <script>scripts\pg_inv_stringToIndex.gml</script>
       </scripts>
       <scripts name="Turret">
         <script>scripts\fireShooter.gml</script>
       </scripts>
+      <script>scripts\pg_new_missile.gml</script>
     </scripts>
-    <script>scripts\pg_inv_stringToSprite.gml</script>
+    <scripts name="DeckCreationMenu">
+      <script>scripts\pg_new_deckListEntry.gml</script>
+    </scripts>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_instructions</font>
@@ -87,6 +108,7 @@
         <object>objects\obj_beam</object>
         <object>objects\obj_grenadeExplosion</object>
         <object>objects\obj_grenade</object>
+        <object>objects\obj_homeMissile</object>
       </objects>
       <objects name="hud">
         <object>objects\obj_reloadingSpinner</object>
@@ -97,6 +119,7 @@
         <object>objects\obj_spreadShooter</object>
         <object>objects\obj_grenadeShooter</object>
         <object>objects\obj_beamShooter</object>
+        <object>objects\obj_missileShooter</object>
       </objects>
       <objects name="player">
         <object>objects\obj_laserCannon</object>
@@ -113,6 +136,7 @@
         <object>objects\obj_rdCroco</object>
         <object>objects\obj_crocoCreator</object>
         <object>objects\obj_enemy</object>
+        <object>objects\obj_ylCroco</object>
       </objects>
       <object>objects\obj_fieldController</object>
     </objects>
@@ -133,14 +157,25 @@
     <objects name="CommonUI">
       <object>objects\obj_button</object>
     </objects>
+    <objects name="DeckCreationMenu">
+      <object>objects\obj_deckCreationMenu</object>
+      <object>objects\obj_deckCreationOk</object>
+      <object>objects\obj_dc_leftSelect</object>
+      <object>objects\obj_dc_rightSelect</object>
+      <object>objects\obj_dc_selectIcon</object>
+      <object>objects\obj_dc_addButton</object>
+      <object>objects\obj_deckListEntry</object>
+    </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\MainMenu</room>
     <room>rooms\PlayField</room>
     <room>rooms\DropMenu</room>
+    <room>rooms\DeckCreationMenu</room>
   </rooms>
-  <constants number="1">
-    <constant name="FIELD_TIME">10000</constant>
+  <constants number="2">
+    <constant name="FIELD_TIME">30000</constant>
+    <constant name="START_DISTANCE">2500</constant>
   </constants>
   <help>
     <rtf>help.rtf</rtf>

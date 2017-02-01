@@ -53,13 +53,16 @@
             <kind>1</kind>
             <string>var crocoType;
 var tRand = random(100);
-if (tRand &lt; 15) {
+if (tRand &lt; 25) {
   crocoType = obj_blCroco;
-} else if (tRand &gt;= 15 &amp;&amp; tRand &lt; 65) {
+} else if (tRand &lt; 50) {
   crocoType = obj_rdCroco;
-} else {
+} else if (tRand &lt; 75) {
   crocoType = obj_grCroco;
+} else if (tRand &lt;= 100) {
+  crocoType = obj_ylCroco;
 }
+
 var loc = randomOffScreenLocation();
 
 

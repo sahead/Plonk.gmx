@@ -28,18 +28,17 @@
             <string>/** Inventory is the list of all shots available to the
     player for deck construction. */
 inventory = ds_list_create();
-ds_list_add(inventory, "beam", "spread", "beam", "spread");
 
 /** Deck List is the list of shots to use when playing.
     A subset of inventory. **/
 deckList = ds_list_create();
-ds_list_add(deckList, "beam", "spread", "beam", "spread");
+ds_list_add(deckList, "laser", "laser");
 
 /** Rewards are acquired various ways and kept track of 
     with these vars until opened. */
-commonRewards = 4;
-uncommonRewards = 4;
-rareRewards = 4;
+commonRewards = 0;
+uncommonRewards = 0;
+rareRewards = 0;
 </string>
           </argument>
         </arguments>

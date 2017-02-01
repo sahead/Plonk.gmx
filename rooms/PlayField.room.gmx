@@ -9,7 +9,7 @@
   <speed>60</speed>
   <persistent>0</persistent>
   <colour>16744448</colour>
-  <showcolour>-1</showcolour>
+  <showcolour>0</showcolour>
   <code></code>
   <enableViews>0</enableViews>
   <clearViewBackground>-1</clearViewBackground>
@@ -31,7 +31,7 @@
     <yoffset>0</yoffset>
   </makerSettings>
   <backgrounds>
-    <background visible="0" foreground="0" name="" x="0" y="0" htiled="-1" vtiled="-1" hspeed="0" vspeed="0" stretch="0"/>
+    <background visible="-1" foreground="0" name="background0" x="0" y="0" htiled="-1" vtiled="-1" hspeed="0" vspeed="2" stretch="0"/>
     <background visible="0" foreground="0" name="" x="0" y="0" htiled="-1" vtiled="-1" hspeed="0" vspeed="0" stretch="0"/>
     <background visible="0" foreground="0" name="" x="0" y="0" htiled="-1" vtiled="-1" hspeed="0" vspeed="0" stretch="0"/>
     <background visible="0" foreground="0" name="" x="0" y="0" htiled="-1" vtiled="-1" hspeed="0" vspeed="0" stretch="0"/>
@@ -60,6 +60,7 @@
     <instance objName="obj_curWeaponIndicator" x="948" y="738" name="inst_3BEFA181" locked="0" code="qOffset = 3;&#xA;" scaleX="0.600000023841858" scaleY="0.600000023841858" colour="3707764735" rotation="0"/>
     <instance objName="obj_curWeaponIndicator" x="904" y="736" name="inst_B7936095" locked="0" code="qOffset = 2;&#xA;" scaleX="0.699999988079071" scaleY="0.699999988079071" colour="3707764735" rotation="0"/>
     <instance objName="obj_curWeaponIndicator" x="854" y="732" name="inst_1C870FE1" locked="0" code="qOffset = 1;&#xA;" scaleX="0.800000011920929" scaleY="0.800000011920929" colour="3707764735" rotation="0"/>
+    <instance objName="obj_ylCroco" x="120" y="378" name="inst_B5E61A61" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

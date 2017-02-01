@@ -7,5 +7,6 @@ switch (argument0) {
         return spr_grenadeCannon;
     case "beam":
         return spr_beamCannon;
+    case "missile":
+         return spr_missileCannon;
 }
-debugMsg("FAIL!!!!!!!");

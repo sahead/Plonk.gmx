@@ -30,14 +30,14 @@ uRewards = ds_list_create();
 rRewards = ds_list_create();
 
 for (var i = 0; i &lt; obj_gameReference.commonRewards; i++) {
-    ds_list_add(cRewards, "laser");
+    ds_list_add(cRewards, "spread");
 }
 
 for (var i = 0; i &lt; obj_gameReference.uncommonRewards; i++) {
-    if (random(100) &lt; 30) {
-       ds_list_add(uRewards, "laser");
-    } else {
+    if (random(100) &lt; 50) {
        ds_list_add(uRewards, "spread");
+    } else {
+       ds_list_add(uRewards, "beam");
     }
 }
 
@@ -45,7 +45,7 @@ for (var i = 0; i &lt; obj_gameReference.rareRewards; i++) {
     if (random(100) &lt; 50) {
        ds_list_add(rRewards, "grenade");
     } else {
-       ds_list_add(rRewards, "beam");
+       ds_list_add(rRewards, "missile");
     }
 }
 </string>

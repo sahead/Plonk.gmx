@@ -52,7 +52,7 @@ if (FIELD_TIME - current_time + startTime &lt; 0) {
           <argument>
             <kind>1</kind>
             <string>globalvar distance;
-distance = 5000;
+distance = START_DISTANCE;
 startTime = current_time;
 
 pg_deck_init();
@@ -95,6 +95,28 @@ draw_text(400, 20, string_replace(string_replace(string_format(timeLeft, 3, 2),'
 draw_set_font(fnt_instructions);
 draw_text_colour(200, 200, "WASD To Move.#Aim With Mouse.#Press Space Or Click To Shoot.#R to reload.#Collect Drops For New Ammo Types.#Esc to quit.", c_black, c_black, c_black, c_black, 0.7);
 </string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="10" enumb="35">
+      <action>
+        <libid>1</libid>
+        <id>224</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_another_room</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>11</kind>
+            <room>DropMenu</room>
           </argument>
         </arguments>
       </action>
